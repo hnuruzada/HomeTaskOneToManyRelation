@@ -1,0 +1,32 @@
+﻿@using HomeTaskRelation
+@using HomeTaskRelation.Models
+@model List<Group>
+@{
+    ViewData["Title"] = "Index";
+}
+
+ @foreach (Group group in Model)
+        {
+
+            @foreach (Student student in group.Students)
+            {
+
+
+                <div class="card mb-4" style="width: 18rem;">
+                   <div class="card-header" style="background-color:yellow">
+                        <h1 class="card-title" style="color:blue">GroupId :  @student.GroupId</h1>
+                   </div>
+                    
+                    <div class="card-body"style="background-color:aqua">
+               
+                        <h6 class="card-title">Name : @student.Name @student.LastName</h6>
+                        
+                        <p class="card-text">age : @student.Age</p>
+
+                    </div>
+                </div>
+
+
+            }
+        }
+
